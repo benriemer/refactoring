@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_cms_seo_teasers",
+  "info": {
+    "displayName": "Seo Teaser",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

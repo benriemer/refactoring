@@ -1,0 +1,5 @@
+/**
+ * page service
+ */
+
+export default () => ({});

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "radio_station_tracks",
+  "info": {
+    "singularName": "radio-station-track",
+    "pluralName": "radio-station-tracks",
+    "displayName": "Radio Track",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "artist": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "startTimestamp": {
+      "type": "biginteger"
+    },
+    "RadioStation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::radio-station.radio-station",
+      "inversedBy": "RadioStationTracks"
+    }
+  }
+}

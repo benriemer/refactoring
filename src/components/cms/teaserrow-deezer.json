@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_cms_deezer_teaserrows",
+  "info": {
+    "displayName": "Teaserrow Deezer",
+    "icon": "music",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "DEEZER_USER_RECENTLYPLAYED",
+        "DEEZER_USER_PLAYLISTS",
+        "DEEZER_FAVORITES",
+        "DEEZER_RECOMMENDATION",
+        "DEEZER_SMARTTRACKS",
+        "DEEZER_FLOW"
+      ],
+      "default": "DEEZER_RECOMMENDATION",
+      "required": true
+    },
+    "subType": {
+      "type": "enumeration",
+      "default": "NONE",
+      "enum": [
+        "ARTIST",
+        "ALBUM",
+        "PLAYLIST",
+        "ARTIST_PLAYLIST",
+        "NONE"
+      ]
+    },
+    "timingStart": {
+      "type": "datetime"
+    },
+    "timingEnd": {
+      "type": "datetime"
+    },
+    "hidden": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "subscription": {
+      "type": "enumeration",
+      "enum": [
+        "all",
+        "free",
+        "pay"
+      ],
+      "required": true,
+      "default": "all"
+    }
+  }
+}

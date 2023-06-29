@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "radio_stations",
+  "info": {
+    "singularName": "radio-station",
+    "pluralName": "radio-stations",
+    "displayName": "Radio Station",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "RadioStationID": {
+      "type": "uid"
+    },
+    "updated": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "presentedBy": {
+      "type": "string",
+      "required": true,
+      "default": "104.6 RTL Radio"
+    },
+    "playlist": {
+      "type": "string",
+      "required": true
+    },
+    "metaTags": {
+      "type": "string",
+      "required": true
+    },
+    "metaDescription": {
+      "type": "text",
+      "required": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "RadioStationTracks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::radio-station-track.radio-station-track",
+      "mappedBy": "RadioStation"
+    },
+    "artwork": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "currentArtist": {
+      "type": "string"
+    },
+    "currentTitle": {
+      "type": "string"
+    },
+    "expiresAt": {
+      "type": "biginteger"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page",
+      "inversedBy": "radio_station"
+    },
+    "relatedRadioStations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::radio-station.radio-station"
+    },
+    "adTag": {
+      "type": "string",
+      "default": "rtlp_radio/radio_kuratiert"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_cms_show_mores",
+  "info": {
+    "displayName": "show-more",
+    "description": "can be added to a teaserrow to customize internal linking and expand item by clicking on 'show More'"
+  },
+  "options": {},
+  "attributes": {
+    "showMoreTarget": {
+      "type": "string"
+    },
+    "showMoreTitle": {
+      "type": "string"
+    }
+  }
+}

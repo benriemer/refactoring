@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_cms_teaserrow_radios",
+  "info": {
+    "displayName": "Teaserrow Radio",
+    "icon": "assistive-listening-systems",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "radio_stations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::radio-station.radio-station"
+    },
+    "showMoreTarget": {
+      "type": "string"
+    },
+    "subscription": {
+      "type": "enumeration",
+      "enum": [
+        "all",
+        "free",
+        "pay"
+      ],
+      "default": "all",
+      "required": true
+    },
+    "timingStart": {
+      "type": "datetime"
+    },
+    "timingEnd": {
+      "type": "datetime"
+    },
+    "hidden": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "showMoreOptions": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.show-more"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "column": {
+        "unique": true
+      }
+    },
+    "title": {
+      "type": "string",
+      "required": false,
+      "unique": false,
+      "minLength": 1
+    },
+    "seoTitle": {
+      "type": "string",
+      "required": false,
+      "unique": false,
+      "minLength": 1
+    },
+    "metaTags": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "text"
+    },
+    "metaRobotFollow": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "metaRobotIndex": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "teaserrows": {
+      "type": "dynamiczone",
+      "components": [
+        "cms.teaserrow",
+        "cms.teaserrow-deezer",
+        "cms.teaserrow-information",
+        "cms.teaserrow-radio",
+        "cms.teaserrow-seo",
+        "cms.teaserrow-static",
+        "cms.teaserrow-channel"
+      ],
+      "required": true,
+      "max": 100
+    },
+    "channel": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::channel.channel",
+      "mappedBy": "page"
+    },
+    "pageTeaserImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "radio_station": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::radio-station.radio-station",
+      "mappedBy": "page"
+    }
+  }
+}

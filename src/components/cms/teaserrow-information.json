@@ -1,0 +1,67 @@
+{
+  "collectionName": "components_cms_teaserrow_informations",
+  "info": {
+    "displayName": "Teaserrow Information",
+    "icon": "info-circle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "Das tut uns leid!"
+    },
+    "text": {
+      "type": "text",
+      "required": true,
+      "default": "Unser Musik-Angebot können wir leider aus rechtlichen Gründen nicht in allen Ländern außerhalb der EU zur Verfügung stellen."
+    },
+    "buttonText": {
+      "type": "string"
+    },
+    "buttonTarget": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "DEEZER_GEO",
+        "RADIO_GEO",
+        "GENERAL_INFORMATION",
+        "FALLBACK_TOKEN"
+      ],
+      "required": true,
+      "default": "GENERAL_INFORMATION"
+    },
+    "subscription": {
+      "type": "enumeration",
+      "enum": [
+        "all",
+        "free",
+        "pay"
+      ],
+      "default": "all",
+      "required": true
+    },
+    "timingStart": {
+      "type": "datetime"
+    },
+    "timingEnd": {
+      "type": "datetime"
+    },
+    "hidden": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    }
+  }
+}

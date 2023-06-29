@@ -1,0 +1,57 @@
+{
+  "collectionName": "components_cms_teaserrow_statics",
+  "info": {
+    "displayName": "Teaserrow Static",
+    "icon": "pencil-ruler",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cms.static-teaser",
+      "min": 1,
+      "max": 25,
+      "required": true
+    },
+    "timingStart": {
+      "type": "datetime"
+    },
+    "timingEnd": {
+      "type": "datetime"
+    },
+    "hidden": {
+      "type": "boolean",
+      "default": false
+    },
+    "applyDeezerGeoBlocking": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "displayOn": {
+      "type": "enumeration",
+      "enum": [
+        "all",
+        "web",
+        "mobile"
+      ],
+      "default": "all",
+      "required": true
+    },
+    "subscription": {
+      "type": "enumeration",
+      "enum": [
+        "all",
+        "free",
+        "pay"
+      ],
+      "default": "all",
+      "required": true
+    }
+  }
+}
