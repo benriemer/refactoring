@@ -1,0 +1,127 @@
+{
+  "$id": "./schema.json",
+  "title": "RTL+ Music CMS Configuration",
+  "description": "The configuration for RTL+ Music CMS repository",
+  "type": "object",
+  "properties": {
+    "isProduction": {
+      "type": "boolean"
+    },
+    "authUrl": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "env": {
+      "enum": ["local", "dev", "preprod", "prod"]
+    },
+    "deezerProxyUrl": {
+      "type": "string"
+    },
+    "appKeys": {
+      "enum": ["a", "b", "c"]
+    },
+    "kafkaEnabled": {
+      "type": "boolean"
+    },
+    "awsEnabled": {
+      "type": "boolean"
+    },
+    "logConfiguration": {
+      "type": "object",
+      "properties": {
+        "logLevel": {
+          "type": "string",
+          "pattern": "debug|info|warn|error|none"
+        },
+        "bugsnagEnabled": {
+          "type": "boolean"
+        },
+        "bugsnagBreadcrumbLevel": {
+          "type": "string",
+          "pattern": "debug|info|warn|none"
+        }
+      }
+    },
+    "awsConfig": {
+      "type": "object",
+      "required": ["accessKey_id", "access_secret", "bucket"],
+      "properties": {
+        "accessKey_id": {
+          "type": "string"
+        },
+        "access_secret": {
+          "type": "string"
+        },
+        "bucket": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "sitemap_bucket": {
+          "type": "boolean"
+        }
+      }
+    },
+    "cdnBaseUrl": {
+      "type": "string"
+    },
+    "strapiConfig": {
+      "type": "object",
+      "required": [
+        "database_client",
+        "database_name",
+        "database_username",
+        "database_password",
+        "database_ssl",
+        "database_charset",
+        "database_force_migration"
+      ],
+      "properties": {
+        "database_client": {
+          "type": "string"
+        },
+        "database_name": {
+          "type": "string"
+        },
+        "database_username": {
+          "type": "string"
+        },
+        "database_password": {
+          "type": "string"
+        },
+        "database_ssl": {
+          "type": "boolean"
+        },
+        "database_charset": {
+          "type": "string"
+        },
+        "database_force_migration": {
+          "type": "boolean"
+        }
+      }
+    },
+    "jwtSecret": {
+      "type": "string"
+    },
+    "apiToken": {
+      "type": "string"
+    },
+    "adminJwtToken": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "authUrl",
+    "deezerProxyUrl",
+    "trackingEndpoint",
+    "env",
+    "authConfig",
+    "strapiConfig",
+    "jwtSecret",
+    "apiToken",
+    "adminJwtToken"
+  ]
+}
